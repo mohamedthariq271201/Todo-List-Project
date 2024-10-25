@@ -14,28 +14,31 @@ addTaskBtn.addEventListener('click', function () {
 });
 
 
-function createTaskItem(taskText) {
+    function createTaskItem(taskText) {
     const listItem = document.createElement('li');
 
+
+
+    
     
     const taskTextSpan = document.createElement('span');
     taskTextSpan.textContent = taskText;
     taskTextSpan.className = 'task-text';
     listItem.appendChild(taskTextSpan);
 
-   
+    
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
     editBtn.className = 'edit-btn';
     listItem.appendChild(editBtn);
 
- 
+    // Delete button
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.className = 'delete-btn';
     listItem.appendChild(deleteBtn);
 
-
+    // Edit button functionality
     editBtn.addEventListener('click', function () {
         if (editBtn.textContent === 'Edit') {
             const newText = prompt('Edit your task:', taskTextSpan.textContent);
@@ -45,7 +48,7 @@ function createTaskItem(taskText) {
         }
     });
 
-   
+    // Delete button functionality
     deleteBtn.addEventListener('click', function () {
         taskList.removeChild(listItem);
     });
